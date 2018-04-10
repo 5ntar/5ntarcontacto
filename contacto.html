@@ -42,20 +42,20 @@
                // <input type="button" value="Enviar un email" onclick="parent.location='mailto:5ntarapp@gmail.com'"> //
                 <?php
 if(isset($_POST['email'])) {
+    // Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
+    $email_to = "5ntarapp@gmail.com";
+    $email_subject = "Contacto desde el sitio web";
+ }
 
-// Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-$email_to = "5ntarapp@gmail.com";
-$email_subject = "Contacto desde el sitio web";
 
 // Aquí se deberían validar los datos ingresados por el usuario
 if(!isset($_POST['txt_nombre']) ||
 !isset($_POST['txt_lugar']) ||
 !isset($_POST['txt_descripcion']) ||{
-
 echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
 echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
 die();
-}
+
 
 $email_message = "Detalles del formulario de contacto:\n\n";
 $email_message .= "Nombre: " . $_POST['txt_nombre'] . "\n";
