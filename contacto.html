@@ -52,9 +52,7 @@ if(isset($_POST['email'])) {
 if(!isset($_POST['txt_nombre']) ||
 !isset($_POST['txt_lugar']) ||
 !isset($_POST['txt_descripcion']) ||{
-echo "<b>Ocurrió un error y el formulario no ha sido enviado. </b><br />";
-echo "Por favor, vuelva atrás y verifique la información ingresada<br />";
-die();
+
 
 
 $email_message = "Detalles del formulario de contacto:\n\n";
@@ -63,7 +61,6 @@ $email_message .= "Apellido: " . $_POST['txt_lugar'] . "\n";
 $email_message .= "E-mail: " . $_POST['txt_descripcion'] . "\n";
 
 
-// Ahora se envía el e-mail usando la función mail() de PHP
 $headers = 'From: '.$email_from."\r\n".
 'Reply-To: '.$email_from."\r\n" .
 'X-Mailer: PHP/' . phpversion();
