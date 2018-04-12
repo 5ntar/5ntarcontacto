@@ -5,6 +5,12 @@
         <title>Contacto</title>
         <link rel="stylesheet" type="text/css" href="contacto.css">
         <script type="text/javascript" src="5ntar.js"></script>
+        <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script type="text/javascript">
+           (function(){
+              emailjs.init("user_AmL4luVmtXES7UzP2d2j0");
+           })();
+        </script>
     </head>
     <body>
           
@@ -30,43 +36,18 @@
                     </div>
                     <div>
                         <label for="lbl_lugar">Mail:</label>
-                        <input type="text" id="txt_lugar" />
+                        <input type="text" id="txt_mail" />
                     </div>
                      <div>
                         <label for="lbl_descripcion">Mensaje:</label>
                         <textarea id="txt_descripcion"></textarea>
                     </div>
                 </div>
-               <input type="button" value="Enviar un email" onclick="parent.location='mailto:5ntarapp@gmail.com'"> 
-                <?php
-if(onclick button)) {
-    // Debes editar las próximas dos líneas de código de acuerdo con tus preferencias
-    $email_to = "5ntarapp@gmail.com";
-    $email_subject = "Contacto desde el sitio web";
- }
-
-
-// Aquí se deberían validar los datos ingresados por el usuario
-if(!isset($_POST['txt_nombre']) ||
-!isset($_POST['txt_lugar']) ||
-!isset($_POST['txt_descripcion']) ||{
-
-
-
-$email_message = "Detalles del formulario de contacto:\n\n";
-$email_message .= "Nombre: " . $_POST['txt_nombre'] . "\n";
-$email_message .= "Apellido: " . $_POST['txt_lugar'] . "\n";
-$email_message .= "E-mail: " . $_POST['txt_descripcion'] . "\n";
-
-
-$headers = 'From: '.$email_from."\r\n".
-'Reply-To: '.$email_from."\r\n" .
-'X-Mailer: PHP/' . phpversion();
-@mail($email_to, $email_subject, $email_message, $headers);
-
-echo "¡El formulario se ha enviado con éxito!";
-}
-?>
+               <input type="button" value="Enviar un email" onclick="emailjs.send("mailgun", "template_1uXEJpnJ", {"mail": document.getElementById('txt_mail').value
+,"mensaje": document.getElementById('txt_descripcion').value
+,"nombre": document.getElementById('txt_nombre').value})
+"> 
+              
             </div>
                
               
