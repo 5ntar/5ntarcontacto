@@ -43,9 +43,12 @@
                         <textarea id="txt_descripcion"></textarea>
                     </div>
                 </div>
-               <input type="button" value="Enviar un email" onclick="emailjs.send("mailgun", "template_1uXEJpnJ", {"mail": document.getElementById('txt_mail').value
-,"mensaje": document.getElementById('txt_descripcion').value
-,"nombre": document.getElementById('txt_nombre').value})" /> 
+               <input type="button" value="Enviar un email" onclick="emailjs.send('mailgun', 'template_1uXEJpnJ', 
+                                                                    {
+                                                                     'mail': document.getElementById('txt_mail').value
+                                                                     ,'mensaje': document.getElementById('txt_descripcion').value
+                                                                     ,'nombre': document.getElementById('txt_nombre').value})
+                                                                     " /> 
               
             </div>
                
