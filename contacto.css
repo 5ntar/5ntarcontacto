@@ -110,6 +110,7 @@ p {
     display: grid;
 }
 img.imgtwitter {
+    margin-left: 30px;
     width: 40%;
     margin-right: 100px;
     float: left;
